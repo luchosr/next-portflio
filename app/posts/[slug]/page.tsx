@@ -1,14 +1,11 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
-import { MDXRemote } from 'next-mdx-remote'
 
 import { formatDate } from '@/lib/utils'
-import MDXContent from '@/components/mdx-content'
+import MDXContent from '@/components/MdxContent'
 import { getPosts, getPostBySlug } from '@/lib/posts'
 import { ArrowLeftIcon } from '@radix-ui/react-icons'
-
-// import NewsletterForm from '@/components/newsletter-form'
 
 export async function generateStaticParams() {
   const posts = await getPosts()
@@ -59,11 +56,10 @@ export default async function Post({ params }: { params: { slug: string } }) {
         </header>
 
         <main className='prose dark:prose-invert mt-16'>
-          <MDXRemote source={content} />
-          {/* <MDXContent source={content} /> */}
+          <MDXContent source={content} />
         </main>
 
-        <footer className='mt-16'>{/* <NewsletterForm /> */}</footer>
+        <footer className='mt-16'></footer>
       </div>
     </section>
   )
