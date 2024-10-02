@@ -1,5 +1,6 @@
 import Intro from '@/components/Intro'
 import RecentPosts from '@/components/RecentPosts'
+import RecentProjects from '@/components/RecentProjects'
 import React from 'react'
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <div className='container max-w-3xl'>
         <Intro />
         <RecentPosts />
+        <RecentProjects />
       </div>
     </section>
   )
